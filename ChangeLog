@@ -1,3 +1,16 @@
+2000-12-19  Michael Natterer  <mitch@gimp.org>
+
+	* brushes/.cvsignore
+	* patterns/.cvsignore: added .xvpics and .thumbnails
+
+	* patterns/funnymess2.pat
+	* patterns/metallica.pat: changed from RGBA to RGB.
+
+	* patterns/Makefile.am
+	* patterns/color.pat
+	* patterns/horiz.pat: were RGBA too, removed because they were
+	too useless to fix.
+	
 Thu Oct 26 10:56:22 PDT 2000 Manish Singh <yosh@gimp.org>
 
 	* bump up to 1.1.28
