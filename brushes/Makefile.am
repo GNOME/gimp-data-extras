@@ -13,7 +13,6 @@ EXTRA_DIST = $(brushdata_DATA)
 .PHONY: files
 
 FILES	=\
-
 	50x50cone.gbr		\
 	50x50square.gbr		\
 	50x50squareBlur.gbr	\
@@ -24,10 +23,6 @@ FILES	=\
 	bigcircle4.gbr		\
 	bird.gbr		\
 	bullethole.gbr		\
-	callig1.gbr		\
-	callig2.gbr		\
-	callig3.gbr		\
-	callig4.gbr		\
 	cloth.gbr		\
 	flower.gbr		\
 	flower_large.gbr	\	
@@ -58,5 +53,5 @@ FILES	=\
 	text3.gbr		\
 	text4.gbr		\
 	tulip.gbr		\
-	wave.gbr		\
+	wave.gbr		
 
