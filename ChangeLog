@@ -1,3 +1,7 @@
+2004-01-20  Dave Neary  <bolsh@gimp.org>
+
+	* configure.in: Update for 2.0 release.
+
 Mon Dec 25 00:08:27 PST 2000 Manish Singh <yosh@gimp.org>
 
 	* Made 1.2.0 release
