@@ -15,4 +15,10 @@ Thu Nov  6 10:16:28 EST 1997 Adrian Likins
 
 	* made gimp-data-* versionless
 
-	
+Mon Dec  8 13:25:54 EST 1997 Adrian Likins
+
+	* removed some brushes "borrowed" form other apps
+
+	* added a Authors.brushes file
+
+	* added some nice brushes from Daniel Dunbar	
