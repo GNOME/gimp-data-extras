@@ -1,0 +1,10 @@
+gimp-data-extras for Debian GNU/Linux
+----------------------------------
+
+The GNU Image Manipulation Program lets you draw, edit images, and
+manipulate them any way you want!
+
+These files include a extra, optional set of brushes, palettes, and
+gradients for The GIMP.
+
+Ben Gertzfield <che@debian.org>, Thu, 14 Jul 1997 23:28:46 -0500

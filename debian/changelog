@@ -1,0 +1,53 @@
+gimp-data-extras (1:0.99a-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Ben Gertzfield <che@debian.org>  Sun,  4 Jan 1998 01:23:04 -0800
+
+gimp-data-extras (1:0.99-1) unstable; urgency=low
+
+  * New upstream version.
+  * Added epoch :1 because upstream version moved to 0.99.
+
+ -- Ben Gertzfield <che@debian.org>  Thu, 25 Dec 1997 19:49:11 -0800
+
+gimp-data-extras (0.99.14-1) unstable; urgency=low
+
+  * Upstream source has split into two; gimp-data-min and gimp-data-extras.
+
+ -- Ben Gertzfield <che@debian.org>  Sun, 19 Oct 1997 11:26:51 -0700
+
+gimp-data (0.99.13-1) unstable; urgency=low
+
+  * New upstream version.
+  * Removed dependancy on gimp, confused too many people.
+  
+ -- Ben Gertzfield <che@debian.org>  Fri, 10 Oct 1997 22:45:35 -0700
+
+gimp-data (0.99.10-2) unstable; urgency=low
+
+  * Fixed dependancy problem (depended on gimp (=0.99.10-1), should be
+    gimp (>=0.99.10))
+
+ -- Ben Gertzfield <che@imsa.edu>  Fri,  1 Aug 1997 09:09:56 -0500
+
+gimp-data (0.99.10-1) unstable; urgency=low
+
+  * New maintainer.
+  * Split off package from gimp.
+
+ -- Ben Gertzfield <che@imsa.edu>  Tue, 15 Jul 1997 09:29:46 -0500
+
+Local variables:
+mode: debian-changelog
+add-log-mailing-address: "che@debian.org"
+End:
+
+  
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,19 @@
+Source: gimp-data-extras
+Section: graphics
+Priority: optional
+Maintainer: Ben Gertzfield <che@debian.org>
+Standards-Version: 2.4.0.0
+
+Package: gimp-data-extras
+Architecture: all
+Conflicts: gimp-data
+Replaces: gimp-data
+Description: An extra set of brushes, palettes, and gradients for The GIMP
+ This package contains extra brushes, palettes, and gradients for
+ extra GIMPy artistic enjoyment.
+ . 
+ Version 0.99 of The GIMP is a total re-write of the old 0.54 code.
+ It's fully layers-based, making it easy to use and more powerful.
+ .
+ This version is not based on Motif code, so it is entirely free!
+
