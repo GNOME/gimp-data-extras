@@ -1,3 +1,7 @@
+2004-10-23  Sven Neumann  <sven@gimp.org>
+
+	* Made 2.0.1 release.
+
 2004-10-23  Michael Natterer  <mitch@gimp.org>
 
 	* autogen.sh: always print all configure args.

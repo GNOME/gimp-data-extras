@@ -1,1 +1,7 @@
-GIMP Data Extras Updated for 2.0 Prereleases!
+Version 2.0.1
+-------------
+- readded three missing patterns (bug #155822)
+
+Version 2.0.0
+-------------
+- updated for GIMP 2.0 release
