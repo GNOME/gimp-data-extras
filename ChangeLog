@@ -1,5 +1,11 @@
 2000-12-19  Michael Natterer  <mitch@gimp.org>
 
+	* patterns/funnymess2.pat
+	* patterns/metallica.pat: Call them "Funny Mess" and "Metallica",
+	not just "GIMP Pattern".
+
+2000-12-19  Michael Natterer  <mitch@gimp.org>
+
 	* brushes/.cvsignore
 	* patterns/.cvsignore: added .xvpics and .thumbnails
 
