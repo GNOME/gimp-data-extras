@@ -25,7 +25,7 @@ FILES	=\
 	bullethole.gbr		\
 	cloth.gbr		\
 	flower.gbr		\
-	flower_large.gbr	\	
+	flower_large.gbr	\
 	gecko.gbr		\
 	grid.gbr		\
 	grid2.gbr		\
@@ -48,7 +48,7 @@ FILES	=\
 	star5.gbr		\
 	swirl.gbr		\
 	swirl2.gbr		\
-	text1.gbr		\	
+	text1.gbr		\
 	text2.gbr		\
 	text3.gbr		\
 	text4.gbr		\
