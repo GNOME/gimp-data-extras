@@ -1,25 +1,25 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_INIT(brushes/flower.gbr)
 
-AM_INIT_AUTOMAKE(gimp-data-extras, 1.1.0)
+AM_INIT_AUTOMAKE(gimp-data-extras, 1.1.20)
 
-gimpdatadir=`gimptool --gimpdatadir`
+AM_PATH_GIMP(1.1.20,,
+  AC_MSG_ERROR(Test for GIMP failed. See file 'INSTALL' for help.))
 
 brushdata=`ls -1 $srcdir/brushes | grep -v Makefile`
-gradientdata=`ls -1 $srcdir/gradients | grep -v Makefile`
-palettedata=`ls -1 $srcdir/palettes | grep -v Makefile`
+dnl gradientdata=`ls -1 $srcdir/gradients | grep -v Makefile`
+dnl palettedata=`ls -1 $srcdir/palettes | grep -v Makefile`
 patterndata=`ls -1 $srcdir/patterns | grep -v Makefile`
 
 brushdata=`echo $brushdata`
-gradientdata=`echo $gradientdata`
-palettedata=`echo $palettedata`
+dnl gradientdata=`echo $gradientdata`
+dnl palettedata=`echo $palettedata`
 patterndata=`echo $patterndata`
 
-AC_SUBST(gimpdatadir)
 AC_SUBST(brushdata)
-AC_SUBST(gradientdata)
-AC_SUBST(palettedata)
+dnl AC_SUBST(gradientdata)
+dnl AC_SUBST(palettedata)
 AC_SUBST(patterndata)
 
 dnl Output the Makefiles
-AC_OUTPUT(Makefile brushes/Makefile gradients/Makefile palettes/Makefile patterns/Makefile, [test -z "$CONFIG_HEADERS" || echo timestamp > stamp-h])
+AC_OUTPUT(Makefile brushes/Makefile patterns/Makefile)

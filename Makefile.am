@@ -1,10 +1,11 @@
 ## Process this file with automake to produce Makefile.in
 
-SUBDIRS = brushes gradients palettes patterns
+## SUBDIRS = brushes gradients palettes patterns
+SUBDIRS = brushes patterns
 
 brushdata=
-gradientdata=
-palettedata=
+## gradientdata=
+## palettedata=
 patterndata=
 
 .PHONY: files populate checkin release

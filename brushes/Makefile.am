@@ -1,4 +1,4 @@
-brushdatadir = $(gimpdatadir)/brushes
+brushdatadir = $(GIMP_DATA_DIR)/brushes
 
 brushdata =
 gradientdata =

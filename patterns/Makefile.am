@@ -1,4 +1,4 @@
-patterndatadir = $(gimpdatadir)/patterns
+patterndatadir = $(GIMP_DATA_DIR)/patterns
 
 brushdata =
 gradientdata =
