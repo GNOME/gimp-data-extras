@@ -46,6 +46,9 @@ patterndata_DATA = \
 	etbf.pat			\
 	floor_tile.pat			\
 	funnyblobs.pat			\
+	funnymess2.pat			\
+	funnymess.pat			\
+	fuzzy-colors.pat		\
 	gold.pat			\
 	goldcloth.pat			\
 	granite2.pat			\

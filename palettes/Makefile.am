@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-palettedatadir = $(gimpdatadir)/palettees
+palettedatadir = $(GIMP_DATA_DIR)/palettees
 
 palettedata_DATA =
 

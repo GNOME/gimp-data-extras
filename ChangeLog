@@ -1,3 +1,19 @@
+2004-10-23  Michael Natterer  <mitch@gimp.org>
+
+	* autogen.sh: always print all configure args.
+
+	* configure.in: bumped version to 2.0.1. Removed cruft.
+
+	* gradients/Makefile.am
+	* palettes/Makefile.am: fixed unused Makefiles.
+
+	* patterns/Makefile.am (patterndata_DATA): added 3 missing
+	patterns. Fixs bug #155822.
+
+	* install-sh
+	* missing
+	* mkinstalldirs: removed. Should not be in CVS.
+
 2004-09-07  Sven Neumann  <sven@gimp.org>
 
 	* palettes/Makefile.am: some cleanup in this unused directory.
