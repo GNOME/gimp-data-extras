@@ -1,17 +1,8 @@
+## Process this file with automake to produce Makefile.in
+
 brushdatadir = $(GIMP_DATA_DIR)/brushes
 
-brushdata =
-gradientdata =
-palettedata =
-patterndata =
-
-brushdata_DATA = @brushdata@
-
-EXTRA_DIST = $(brushdata_DATA)
-
-.PHONY: files
-
-FILES	=\
+brushdata_DATA = \
 	50x50cone.gbr		\
 	50x50square.gbr		\
 	50x50squareBlur.gbr	\
@@ -54,3 +45,4 @@ FILES	=\
 	tulip.gbr		\
 	wave.gbr		
 
+EXTRA_DIST = $(brushdata_DATA)
