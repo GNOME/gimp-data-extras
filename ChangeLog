@@ -1,3 +1,9 @@
+1999-09-23  Kelly Lynn Martin  <kelly@poverty.bloomington.in.us>
+
+	* palettes/Pumpkin: Added Pumpkin palette and set up the
+	makefiles in the palette directory.  Also fixed the EXTRA_DATA
+	reference in the makefiles (automake complained).
+
 Tue Jun  2 00:00:06 PDT 1998 Manish Singh <yosh@gimp.org>
 
 	* Made 1.0 release
