@@ -1,3 +1,9 @@
+2000-10-02  Michael Natterer  <mitch@gimp.org>
+
+	* configure.in: Applied patch from
+	Ezra Peisach <epeisach@engrailed.mit.edu>. Closes #25267.
+	Added AM_MAINTAINER_MODE.
+
 Sat Apr 22 13:52:21 PDT 2000 Manish Singh <yosh@gimp.org>
 
 	* First 1.1 release
