@@ -1,3 +1,7 @@
+Tue Apr  7 22:43:51 PDT 1998 Manish Singh <yosh@gimp.org>
+
+	* configure.in: use $srcdir
+
 Mon Sep 22 17:34:53 1997  Federico Mena  <federico@bananoid.nuclecu.unam.mx>
 
 	* Made 0.99.11 release.

@@ -5,10 +5,10 @@ AM_INIT_AUTOMAKE(gimp-data-extras, 0.99.16)
 
 gimpdatadir=$datadir/gimp
 
-brushdata=`ls -1 brushes | grep -v Makefile`
-gradientdata=`ls -1 gradients | grep -v Makefile`
-palettedata=`ls -1 palettes | grep -v Makefile`
-patterndata=`ls -1 patterns | grep -v Makefile`
+brushdata=`ls -1 $srcdir/brushes | grep -v Makefile`
+gradientdata=`ls -1 $srcdir/gradients | grep -v Makefile`
+palettedata=`ls -1 $srcdir/palettes | grep -v Makefile`
+patterndata=`ls -1 $srcdir/patterns | grep -v Makefile`
 
 brushdata=`echo $brushdata`
 gradientdata=`echo $gradientdata`
