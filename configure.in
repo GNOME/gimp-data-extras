@@ -5,7 +5,11 @@ AM_INIT_AUTOMAKE(gimp-data-extras, 2.0.0)
 AM_MAINTAINER_MODE
 AC_PROG_CC
 
-AM_PATH_GIMP_2_0(1.3.23, , AC_MSG_ERROR(Cannot find GIMP-2.0. See the INSTALL file for help.))
+dnl AM_PATH_GIMP_2_0(1.3.23, , AC_MSG_ERROR(Cannot find GIMP-2.0. See the INSTALL file for help.))
+PKG_CHECK_MODULES(gimp, gimp-2.0)
+GIMP_DATA_DIR=`$PKG_CONFIG gimp-2.0  --variable=gimpdatadir`
+
+AC_SUBST(GIMP_DATA_DIR)
 
 brushdata=`ls -1 $srcdir/brushes | grep -v Makefile`
 dnl gradientdata=`ls -1 $srcdir/gradients | grep -v Makefile`
