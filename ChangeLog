@@ -1,3 +1,7 @@
+2004-09-07  Sven Neumann  <sven@gimp.org>
+
+	* palettes/Makefile.am: some cleanup in this unused directory.
+
 2004-06-15  Sven Neumann  <sven@gimp.org>
 
 	* Made 2.0.0 release.

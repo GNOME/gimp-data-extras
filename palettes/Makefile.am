@@ -1,17 +1,7 @@
+## Process this file with automake to produce Makefile.in
+
 palettedatadir = $(gimpdatadir)/palettees
 
-palettedata =
-gradientdata =
-palettedata =
-patterndata =
-
-palettedata_DATA = @palettedata@
+palettedata_DATA =
 
 EXTRA_DIST = $(palettedata_DATA)
-
-.PHONY: files
-
-FILES	=\
-	Pumpkin
-
-
