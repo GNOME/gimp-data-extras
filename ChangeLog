@@ -1,0 +1,18 @@
+Mon Sep 22 17:34:53 1997  Federico Mena  <federico@bananoid.nuclecu.unam.mx>
+
+	* Made 0.99.11 release.
+
+Tue Sep 23 20:25:49 EDT 1997 Adrian Likins <adrian@gimp.org>
+
+	* Split gimp-data into gimp-data and gimp-extra, which gimp-data
+	  being the essentials adn gimp-extras being all the cool stuff.
+
+Fri Oct 24 23:59:01 CDT 1997 Adrian Likins
+
+	moved a pattern or two into gimp-data-min
+
+Thu Nov  6 10:16:28 EST 1997 Adrian Likins
+
+	* made gimp-data-* versionless
+
+	
