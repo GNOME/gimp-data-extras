@@ -12,7 +12,6 @@ brushdata_DATA = \
 	bigcircle3.gbr		\
 	bigcircle4.gbr		\
 	bird.gbr		\
-	bullethole.gbr		\
 	cloth.gbr		\
 	flower.gbr		\
 	flower_large.gbr	\
@@ -21,11 +20,8 @@ brushdata_DATA = \
 	grid2.gbr		\
 	guitar.gbr		\
 	nova.gbr		\
-	point.gbr		\
-	punch.gbr		\
 	qbert2.gbr		\
 	qbert3Blur.gbr		\
-	reach.gbr		\
 	sphere29.gbr		\
 	sphere36.gbr		\
 	sphere47.gbr		\

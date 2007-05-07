@@ -1,3 +1,14 @@
+2007-05-07  Sven Neumann  <sven@gimp.org>
+
+	* COPYING: GNU General Public License version 2. Fixes bug #410387.
+
+	* brushes/Makefile.am
+	* brushes/punch.gbr
+	* brushes/reach.gbr
+	* brushes/point.gbr
+	* brushes/bullethole.gbr: removed "found" art as their license is
+	unclear.
+
 2004-10-23  Sven Neumann  <sven@gimp.org>
 
 	* Made 2.0.1 release.
