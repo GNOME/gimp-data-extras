@@ -9,7 +9,7 @@ AC_INIT([GIMP Extra Data Files], [gimp_data_extras_version],
 
 AC_CONFIG_SRCDIR([brushes/flower.gbr])
 
-AM_INIT_AUTOMAKE(no-define)
+AM_INIT_AUTOMAKE(no-define dist-bzip2)
 AM_MAINTAINER_MODE
 
 PKG_CHECK_MODULES(gimp, gimp-2.0)
