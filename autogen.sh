@@ -1,6 +1,6 @@
 #!/bin/sh 
 
-PROJECT="The GIMP Extra Data Files"
+PROJECT="GIMP Extra Data Files"
 TEST_TYPE=-f
 FILE="brushes/flower.gbr"
 
