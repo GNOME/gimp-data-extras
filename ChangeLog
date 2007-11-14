@@ -1,5 +1,9 @@
 2007-11-14  Sven Neumann  <sven@gimp.org>
 
+	* Made 2.0.2 release.
+
+2007-11-14  Sven Neumann  <sven@gimp.org>
+
 	* configure.in: bumped version to 2.0.2.
 
 2007-05-07  Sven Neumann  <sven@gimp.org>
