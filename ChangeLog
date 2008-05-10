@@ -1,3 +1,7 @@
+2008-05-10  Sven Neumann  <sven@gimp.org>
+
+	* autogen.sh: updated from the script in gimp. Fixes bug #532485.
+
 2007-11-14  Sven Neumann  <sven@gimp.org>
 
 	* Made 2.0.2 release.

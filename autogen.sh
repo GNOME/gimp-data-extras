@@ -1,11 +1,25 @@
 #!/bin/sh 
 
+# This script does all the magic calls to automake/autoconf and friends
+# that are needed to configure a Subversion checkout.  You need a couple
+# of extra tools to run this script successfully.
+#
+# If you are compiling from a released tarball you don't need these
+# tools and you shouldn't use this script.  Just call ./configure
+# directly.
+
+ACLOCAL=${ACLOCAL-aclocal-1.9}
+AUTOCONF=${AUTOCONF-autoconf}
+AUTOMAKE=${AUTOMAKE-automake-1.9}
+
+AUTOCONF_REQUIRED_VERSION=2.54
+AUTOMAKE_REQUIRED_VERSION=1.9.6
+
+
 PROJECT="GIMP Extra Data Files"
 TEST_TYPE=-f
 FILE="brushes/flower.gbr"
 
-AUTOCONF_REQUIRED_VERSION=2.54
-AUTOMAKE_REQUIRED_VERSION=1.6
 
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
@@ -15,23 +29,54 @@ cd $srcdir
 
 check_version ()
 {
-    if expr $1 \>= $2 > /dev/null; then
-	echo "yes (version $1)"
+    VERSION_A=$1
+    VERSION_B=$2
+
+    save_ifs="$IFS"
+    IFS=.
+    set dummy $VERSION_A 0 0 0
+    MAJOR_A=$2
+    MINOR_A=$3
+    MICRO_A=$4
+    set dummy $VERSION_B 0 0 0
+    MAJOR_B=$2
+    MINOR_B=$3
+    MICRO_B=$4
+    IFS="$save_ifs"
+
+    if expr "$MAJOR_A" = "$MAJOR_B" > /dev/null; then
+        if expr "$MINOR_A" \> "$MINOR_B" > /dev/null; then
+           echo "yes (version $VERSION_A)"
+        elif expr "$MINOR_A" = "$MINOR_B" > /dev/null; then
+            if expr "$MICRO_A" \>= "$MICRO_B" > /dev/null; then
+               echo "yes (version $VERSION_A)"
+            else
+                echo "Too old (version $VERSION_A)"
+                DIE=1
+            fi
+        else
+            echo "Too old (version $VERSION_A)"
+            DIE=1
+        fi
+    elif expr "$MAJOR_A" \> "$MAJOR_B" > /dev/null; then
+	echo "Major version might be too new ($VERSION_A)"
     else
-	echo "Too old (found version $1)!"
+	echo "Too old (version $VERSION_A)"
 	DIE=1
     fi
 }
 
 echo
-echo "I am testing that you have the required versions of autoconf and automake."
+echo "I am testing that you have the tools required to build the"
+echo "$PROJECT from Subversion."
 echo
 
 DIE=0
 
+
 echo -n "checking for autoconf >= $AUTOCONF_REQUIRED_VERSION ... "
-if (autoconf --version) < /dev/null > /dev/null 2>&1; then
-    VER=`autoconf --version \
+if ($AUTOCONF --version) < /dev/null > /dev/null 2>&1; then
+    VER=`$AUTOCONF --version | head -n 1 \
          | grep -iw autoconf | sed "s/.* \([0-9.]*\)[-a-z0-9]*$/\1/"`
     check_version $VER $AUTOCONF_REQUIRED_VERSION
 else
@@ -39,24 +84,26 @@ else
     echo "  You must have autoconf installed to compile $PROJECT."
     echo "  Download the appropriate package for your distribution,"
     echo "  or get the source tarball at ftp://ftp.gnu.org/pub/gnu/autoconf/"
+    echo
     DIE=1;
 fi
 
 echo -n "checking for automake >= $AUTOMAKE_REQUIRED_VERSION ... "
-if (automake-1.7 --version) < /dev/null > /dev/null 2>&1; then
-   AUTOMAKE=automake-1.7
-   ACLOCAL=aclocal-1.7
-elif (automake-1.8 --version) < /dev/null > /dev/null 2>&1; then
-   AUTOMAKE=automake-1.8
-   ACLOCAL=aclocal-1.8
-elif (automake-1.6 --version) < /dev/null > /dev/null 2>&1; then
-   AUTOMAKE=automake-1.6
-   ACLOCAL=aclocal-1.6
+if ($AUTOMAKE --version) < /dev/null > /dev/null 2>&1; then
+   AUTOMAKE=$AUTOMAKE
+   ACLOCAL=$ACLOCAL
+elif (automake-1.10 --version) < /dev/null > /dev/null 2>&1; then
+   AUTOMAKE=automake-1.10
+   ACLOCAL=aclocal-1.10
+elif (automake-1.9 --version) < /dev/null > /dev/null 2>&1; then
+   AUTOMAKE=automake-1.9
+   ACLOCAL=aclocal-1.9
 else
     echo
-    echo "  You must have automake 1.6 or newer installed to compile $PROJECT."
+    echo "  You must have automake $AUTOMAKE_REQUIRED_VERSION or newer installed to compile $PROJECT."
     echo "  Download the appropriate package for your distribution,"
     echo "  or get the source tarball at ftp://ftp.gnu.org/pub/gnu/automake/"
+    echo
     DIE=1
 fi
 
@@ -115,6 +162,8 @@ if test -z "$ACLOCAL_FLAGS"; then
     done
 fi
 
+rm -rf autom4te.cache
+
 $ACLOCAL $ACLOCAL_FLAGS
 RC=$?
 if test $RC -ne 0; then
@@ -124,6 +173,7 @@ fi
 
 $AUTOMAKE --add-missing || exit $?
 autoconf || exit $?
+
 
 cd $ORIGDIR
 
