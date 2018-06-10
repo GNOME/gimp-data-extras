@@ -74,7 +74,7 @@ echo
 DIE=0
 
 
-echo -n "checking for autoconf >= $AUTOCONF_REQUIRED_VERSION ... "
+printf "checking for autoconf >= $AUTOCONF_REQUIRED_VERSION ... "
 if ($AUTOCONF --version) < /dev/null > /dev/null 2>&1; then
     VER=`$AUTOCONF --version | head -n 1 \
          | grep -iw autoconf | sed "s/.* \([0-9.]*\)[-a-z0-9]*$/\1/"`
@@ -88,16 +88,34 @@ else
     DIE=1;
 fi
 
-echo -n "checking for automake >= $AUTOMAKE_REQUIRED_VERSION ... "
+printf "checking for automake >= $AUTOMAKE_REQUIRED_VERSION ... "
 if ($AUTOMAKE --version) < /dev/null > /dev/null 2>&1; then
    AUTOMAKE=$AUTOMAKE
    ACLOCAL=$ACLOCAL
+elif (automake-1.16 --version) < /dev/null > /dev/null 2>&1; then
+   AUTOMAKE=automake-1.16
+   ACLOCAL=aclocal-1.16
+elif (automake-1.15 --version) < /dev/null > /dev/null 2>&1; then
+   AUTOMAKE=automake-1.15
+   ACLOCAL=aclocal-1.15
+elif (automake-1.14 --version) < /dev/null > /dev/null 2>&1; then
+   AUTOMAKE=automake-1.14
+   ACLOCAL=aclocal-1.14
+elif (automake-1.13 --version) < /dev/null > /dev/null 2>&1; then
+   AUTOMAKE=automake-1.13
+   ACLOCAL=aclocal-1.13
+elif (automake-1.12 --version) < /dev/null > /dev/null 2>&1; then
+   AUTOMAKE=automake-1.12
+   ACLOCAL=aclocal-1.12
+elif (automake-1.11 --version) < /dev/null > /dev/null 2>&1; then
+   AUTOMAKE=automake-1.11
+   ACLOCAL=aclocal-1.11
 elif (automake-1.10 --version) < /dev/null > /dev/null 2>&1; then
    AUTOMAKE=automake-1.10
    ACLOCAL=aclocal-1.10
-elif (automake-1.9 --version) < /dev/null > /dev/null 2>&1; then
-   AUTOMAKE=automake-1.9
-   ACLOCAL=aclocal-1.9
+elif (automake --version) < /dev/null > /dev/null 2>&1; then
+   AUTOMAKE=automake
+   ACLOCAL=aclocal
 else
     echo
     echo "  You must have automake $AUTOMAKE_REQUIRED_VERSION or newer installed to compile $PROJECT."
