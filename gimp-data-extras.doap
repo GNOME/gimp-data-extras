@@ -4,11 +4,17 @@
          xmlns:gnome="http://api.gnome.org/doap-extensions#"
          xmlns="http://usefulinc.com/ns/doap#">
 
-  <name xml:lang="en">GIMP data extras</name>
+  <name xml:lang="en">GIMP Data Extras</name>
   <shortdesc xml:lang="en">Extra brushes, patterns, and scripts for GIMP</shortdesc>
+  <description>GIMP Data Extras ships extra resources for GIMP that were removed
+  from the stock version of GIMP, but are of use to some of GIMP users. This 
+  includes brushes, patterns, and scripts.</description>
   <homepage rdf:resource="http://www.gimp.org" />
   <mailing-list rdf:resource="http://gimp.org/mail_lists.html" />
-  <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
+  <download-page rdf:resource="https://download.gimp.org/pub/gimp/extras/" />
+  <bug-database rdf:resource="https://gitlab.gnome.org/GNOME/gimp-data-extras/issues/new" />
+  <category rdf:resource="http://api.gnome.org/doap-extensions#deprecated" />
+  <programming-language>Script-Fu</programming-language>
 
   <maintainer>
     <foaf:Person>
