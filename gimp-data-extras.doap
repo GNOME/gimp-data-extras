@@ -5,15 +5,15 @@
          xmlns="http://usefulinc.com/ns/doap#">
 
   <name xml:lang="en">GIMP data extras</name>
-  <shortdesc xml:lang="en">Extra brushes, gradients, palettes and patterns for GIMP</shortdesc>
+  <shortdesc xml:lang="en">Extra brushes, patterns, and scripts for GIMP</shortdesc>
   <homepage rdf:resource="http://www.gimp.org" />
   <mailing-list rdf:resource="http://gimp.org/mail_lists.html" />
   <category rdf:resource="http://api.gnome.org/doap-extensions#productivity" />
 
   <maintainer>
     <foaf:Person>
-      <foaf:name>Sven Neumann</foaf:name>
-      <gnome:userid>neo</gnome:userid>
+      <foaf:name>Alexandre Prokoudine</foaf:name>
+      <gnome:userid>aprokoudine</gnome:userid>
     </foaf:Person>
   </maintainer>
 </Project>
