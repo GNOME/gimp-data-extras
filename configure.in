@@ -7,7 +7,7 @@ AC_INIT([GIMP Extra Data Files], [gimp_data_extras_version],
         [http://bugzilla.gnome.org/enter_bug.cgi?product=GIMP],
         [gimp-data-extras])
 
-AC_CONFIG_SRCDIR([brushes/flower.gbr])
+AC_CONFIG_SRCDIR([brushes/Splatters/flower.gbr])
 
 AM_INIT_AUTOMAKE(no-define dist-bzip2)
 AM_MAINTAINER_MODE

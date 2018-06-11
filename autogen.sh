@@ -18,7 +18,7 @@ AUTOMAKE_REQUIRED_VERSION=1.9.6
 
 PROJECT="GIMP Extra Data Files"
 TEST_TYPE=-f
-FILE="brushes/flower.gbr"
+FILE="brushes/Splatters/flower.gbr"
 
 
 srcdir=`dirname $0`
