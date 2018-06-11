@@ -1,10 +1,12 @@
-## Makefile.am for gimp/data/brushes/Texture
+## Makefile.am for gimp-data-extras/brushes/Texture
 
-brushbasicdatadir = $(gimpdatadir)/brushes/Texture
+brushtexturedatadir = $(GIMP_DATA_DIR)/brushes/Texture
 
-brushdata_DATA = \
+brushtexturedata_DATA = \
 	cloth.gbr		\
 	text1.gbr		\
 	text2.gbr		\
 	text3.gbr		\
 	text4.gbr		
+	
+EXTRA_DIST = $(brushtexturedata_DATA)

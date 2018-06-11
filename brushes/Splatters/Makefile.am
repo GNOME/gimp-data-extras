@@ -1,8 +1,8 @@
-## Makefile.am for gimp/data/brushes/Splatters
+## Makefile.am for gimp-data-extras/brushes/Splatters
 
-brushbasicdatadir = $(gimpdatadir)/brushes/Splatters
+brushsplattersdatadir = $(GIMP_DATA_DIR)/brushes/Splatters
 
-brushdata_DATA = \
+brushsplattersdata_DATA = \
 	flower.gbr		\
 	flower_large.gbr	\
 	nova.gbr		\
@@ -15,3 +15,5 @@ brushdata_DATA = \
 	swirl2.gbr		\
 	tulip.gbr		\
 	wave.gbr		
+	
+EXTRA_DIST = $(brushsplattersdata_DATA)

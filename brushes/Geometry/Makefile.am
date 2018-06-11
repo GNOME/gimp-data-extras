@@ -1,8 +1,8 @@
-## Makefile.am for gimp/data/brushes/Geometry
+## Makefile.am for gimp-data-extras/brushes/Geometry
 
-brushbasicdatadir = $(gimpdatadir)/brushes/Geometry
+brushgeometrydatadir = $(GIMP_DATA_DIR)/brushes/Geometry
 
-brushdata_DATA = \
+brushgeometrydata_DATA = \
 	50x50cone.gbr		\
 	50x50square.gbr		\
 	50x50squareBlur.gbr	\
@@ -20,3 +20,5 @@ brushdata_DATA = \
 	sphere47.gbr		\
 	sphere55.gbr		\
 	sphere79.gbr
+	
+EXTRA_DIST = $(brushgeometrydata_DATA)
