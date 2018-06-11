@@ -1,12 +1,20 @@
+Version 2.0.3
+-------------
+- Updated license to GPLv3+
+- Moved brushes to dedicated folders to enable tags
+- Added scripts obsoleted in GIMP 2.10
+  ('File > Create' and 'Filters > Alpha to Logo'
+- Modernized automake
+
 Version 2.0.2
 -------------
-- specify the license (bug #410387)
-- removed "found" art as their license is unclear
+- Specified the license (bug #410387)
+- Removed "found" art as their license is unclear
 
 Version 2.0.1
 -------------
-- readded three missing patterns (bug #155822)
+- Re-added three missing patterns (bug #155822)
 
 Version 2.0.0
 -------------
-- updated for GIMP 2.0 release
+- Updated for GIMP 2.0 release
