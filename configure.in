@@ -26,6 +26,7 @@ brushes/Geometry/Makefile
 brushes/Splatters/Makefile
 brushes/Texture/Makefile
 patterns/Makefile
+patterns/Legacy/Makefile
 scripts/Makefile
 ])
 
