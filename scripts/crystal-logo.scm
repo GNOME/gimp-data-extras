@@ -171,7 +171,7 @@
     (set! layer2 (car (gimp-layer-copy bg-layer TRUE)))
     (gimp-image-insert-layer img layer2 0 1)
 
-    (plug-in-displace RUN-NONINTERACTIVE img layer2 displace displace TRUE TRUE disp-map disp-map 0)
+    (plug-in-displace RUN-NONINTERACTIVE img layer2 displace displace TRUE TRUE disp-map disp-map 1)
     (set! layer-mask2 (car (gimp-layer-create-mask layer2 ADD-BLACK-MASK)))
     (gimp-layer-add-mask layer2 layer-mask2)
     (gimp-image-select-item img CHANNEL-OP-REPLACE text-layer)
