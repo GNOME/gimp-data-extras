@@ -2,6 +2,7 @@ Version 2.0.3
 -------------
 - Updated license to GPLv3+
 - Moved brushes to dedicated folders to enable tags
+- Moved all patterns to Legacy to tag them properly
 - Added scripts obsoleted in GIMP 2.10
   ('File > Create' and 'Filters > Alpha to Logo'
 - Modernized automake
