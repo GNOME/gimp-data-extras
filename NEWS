@@ -1,4 +1,4 @@
-Version 2.0.3
+Version 2.0.4
 -------------
 - Updated license to GPLv3+
 - Moved brushes to dedicated folders to enable tags
@@ -7,6 +7,7 @@ Version 2.0.3
   ('File > Create' and 'Filters > Alpha to Logo'
   and update some PDB use to match changes in 2.10
 - Modernized automake
+- Switched to minor/micro versioning
 
 Version 2.0.2
 -------------
