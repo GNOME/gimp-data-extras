@@ -5,6 +5,7 @@ Version 2.0.3
 - Moved all patterns to Legacy to tag them properly
 - Added scripts obsoleted in GIMP 2.10
   ('File > Create' and 'Filters > Alpha to Logo'
+  and update some PDB use to match changes in 2.10
 - Modernized automake
 
 Version 2.0.2
