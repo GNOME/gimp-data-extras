@@ -64,7 +64,7 @@
     (gimp-selection-none img)
     (gimp-layer-set-lock-alpha logo-layer FALSE)
     (plug-in-bump-map RUN-NONINTERACTIVE img logo-layer blur-layer
-                      135 50 10 0 0 0 30 TRUE FALSE 0)
+                      135 50 10 0 0 0 0.3 TRUE FALSE 0)
     (gimp-layer-set-offsets blur-layer 5 5)
     (gimp-invert blur-layer)
     (gimp-layer-set-opacity blur-layer 50.0)
