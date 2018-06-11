@@ -21,6 +21,10 @@ dnl Output the Makefiles
 AC_CONFIG_FILES([
 Makefile
 brushes/Makefile
+brushes/Fun/Makefile
+brushes/Geometry/Makefile
+brushes/Splatters/Makefile
+brushes/Texture/Makefile
 patterns/Makefile
 ])
 
