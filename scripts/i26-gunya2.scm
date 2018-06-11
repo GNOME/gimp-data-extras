@@ -62,7 +62,7 @@
     (plug-in-gauss-rle RUN-NONINTERACTIVE distortion-img distortion-layer radius 1 1)
     ;; OK, apply it to dist-text-layer
     (plug-in-displace RUN-NONINTERACTIVE img dist-text-layer radius radius 1 1
-                      distortion-layer distortion-layer 0)
+                      distortion-layer distortion-layer 1)
     ;; make the distortion data once again fro the frame
     (gimp-edit-fill distortion-layer BACKGROUND-FILL)
     (plug-in-noisify RUN-NONINTERACTIVE distortion-img distortion-layer FALSE prob prob prob 0.0)
@@ -71,7 +71,7 @@
     (plug-in-gauss-rle RUN-NONINTERACTIVE distortion-img distortion-layer radius 1 1)
     ;; then, apply it to dist-frame-layer
     (plug-in-displace RUN-NONINTERACTIVE img dist-frame-layer radius radius 1 1
-                      distortion-layer distortion-layer 0)
+                      distortion-layer distortion-layer 1)
     ;; Finally, clear the bottom layer (text-layer)
     (gimp-selection-all img)
     (gimp-context-set-background '(255 255 255))
