@@ -1,10 +1,10 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.54)
 
-m4_define([gimp_data_extras_version], [2.0.2])
+m4_define([gimp_data_extras_version], [2.0.3])
 
 AC_INIT([GIMP Extra Data Files], [gimp_data_extras_version],
-        [http://bugzilla.gnome.org/enter_bug.cgi?product=GIMP],
+        [https://gitlab.gnome.org/GNOME/gimp-data-extras/issues/new],
         [gimp-data-extras])
 
 AC_CONFIG_SRCDIR([brushes/Splatters/flower.gbr])
