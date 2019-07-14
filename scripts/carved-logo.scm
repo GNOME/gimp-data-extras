@@ -4,16 +4,6 @@
 ;   http://www.peachpit.com
 
 
-(define (carve-brush brush-size)
-  (cond ((<= brush-size 5) "Circle (05)")
-        ((<= brush-size 7) "Circle (07)")
-        ((<= brush-size 9) "Circle (09)")
-        ((<= brush-size 11) "Circle (11)")
-        ((<= brush-size 13) "Circle (13)")
-        ((<= brush-size 15) "Circle (15)")
-        ((<= brush-size 17) "Circle (17)")
-        ((> brush-size 17) "Circle (19)")))
-
 (define (carve-scale val scale)
   (* (sqrt val) scale))
 
@@ -30,6 +20,7 @@
         (offy (carve-scale size 0.25))
         (feather (carve-scale size 0.3))
         (brush-size (carve-scale size 0.3))
+        (brush-name (car (gimp-brush-new "Carveed Logo")))
         (b-size (+ (carve-scale size 0.5) padding))
         (layer1 (car (gimp-image-get-active-drawable img)))
         (mask-layer (car (gimp-text-fontname img -1 0 0 text b-size TRUE size PIXELS font)))
@@ -79,7 +70,17 @@
     (set! mask-fat (car (gimp-channel-copy mask)))
     (gimp-image-insert-channel img mask-fat -1 0)
     (gimp-image-select-item img CHANNEL-OP-REPLACE mask-fat)
-    (gimp-context-set-brush (carve-brush brush-size))
+
+    (gimp-brush-set-shape brush-name BRUSH-GENERATED-CIRCLE)
+    (gimp-brush-set-spikes brush-name 2)
+    (gimp-brush-set-hardness brush-name 1.0)
+    (gimp-brush-set-spacing brush-name 25)
+    (gimp-brush-set-aspect-ratio brush-name 1)
+    (gimp-brush-set-angle brush-name 0)
+    (cond (<= brush-size 17) (gimp-brush-set-radius brush-name (\ brush-size 2))
+	  (else gimp-brush-set-radius brush-name (\ 19 2)))
+    (gimp-context-set-brush brush-name)
+
     (gimp-context-set-foreground '(255 255 255))
     (gimp-edit-stroke mask-fat)
     (gimp-selection-none img)
@@ -150,6 +151,8 @@
     (gimp-item-set-name highlight-layer _"Bevel Highlight")
     (gimp-item-set-name cast-shadow-layer _"Cast Shadow")
     (gimp-item-set-name inset-layer _"Inset")
+
+    (gimp-brush-delete brush-name)
 
     (gimp-display-new img)
     (gimp-image-undo-enable img)
