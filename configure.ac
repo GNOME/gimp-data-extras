@@ -17,10 +17,29 @@ AC_CONFIG_SRCDIR([brushes/Splatters/flower.gbr])
 AM_INIT_AUTOMAKE(no-define dist-bzip2)
 AM_MAINTAINER_MODE
 
-PKG_CHECK_MODULES(gimp, gimp-2.0)
-GIMP_DATA_DIR=`$PKG_CONFIG gimp-2.0 --variable=gimpdatadir`
+AC_ARG_ENABLE(gimp3,
+  [  --enable-gimp3          Install GIMP 2.99/3 data and plug-ins],,
+  enable_gimp3=no)
 
-AC_SUBST(GIMP_DATA_DIR)
+gimp_pkg_config_name="gimp-2.0"
+if test "x$enable_gimp3" = xyes; then
+  gimp_pkg_config_name="gimp-3.0"
+fi
+
+PKG_CHECK_MODULES(gimp, $gimp_pkg_config_name)
+
+if test "x$enable_gimp3" = xyes; then
+  GIMP_DATA_DIR=`$PKG_CONFIG gimp-3.0 --variable=gimpdatadir`
+  AC_SUBST(GIMP_DATA_DIR)
+
+  GIMP3_PLUG_INS_DIR=`$PKG_CONFIG gimp-3.0 --variable=gimplibdir`/plug-ins
+  AC_SUBST(GIMP3_PLUG_INS_DIR)
+else
+  GIMP_DATA_DIR=`$PKG_CONFIG gimp-2.0 --variable=gimpdatadir`
+  AC_SUBST(GIMP_DATA_DIR)
+fi
+
+AM_CONDITIONAL(ENABLE_GIMP3, test "x$enable_gimp3" = xyes)
 
 dnl Output the Makefiles
 AC_CONFIG_FILES([
@@ -32,6 +51,8 @@ brushes/Splatters/Makefile
 brushes/Texture/Makefile
 patterns/Makefile
 patterns/Legacy/Makefile
+plug-ins/Makefile
+plug-ins/python3/Makefile
 scripts/Makefile
 ])
 
