@@ -471,8 +471,8 @@ class PySlice (Gimp.PlugIn):
                         0, 15, 0,
                         GObject.ParamFlags.READWRITE),
         "animate": (bool,
-                    _("Javascript for onmouseover and clicked"),
-                    _("Javascript for onmouseover and clicked"),
+                    _("JavaScript for onmouseover and clicked"),
+                    _("JavaScript for onmouseover and clicked"),
                     False,
                     GObject.ParamFlags.READWRITE),
         # table caps are table cells on the edge of the table
