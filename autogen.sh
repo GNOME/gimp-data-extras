@@ -131,6 +131,20 @@ if test x$AUTOMAKE != x; then
     check_version $VER $AUTOMAKE_REQUIRED_VERSION
 fi
 
+printf "checking for intltool >= $INTLTOOL_REQUIRED_VERSION ... "
+if (intltoolize --version) < /dev/null > /dev/null 2>&1; then
+    VER=`intltoolize --version \
+         | grep intltoolize | sed "s/.* \([0-9.]*\)/\1/"`
+    check_version $VER $INTLTOOL_REQUIRED_VERSION
+else
+    echo
+    echo "  You must have intltool installed to compile $PROJECT."
+    echo "  Get the latest version from"
+    echo "  ftp://ftp.gnome.org/pub/GNOME/sources/intltool/"
+    echo
+    DIE=1
+fi
+
 if test "$DIE" -eq 1; then
     echo
     echo "Please install/upgrade the missing tools and call me again."
@@ -192,6 +206,7 @@ fi
 $AUTOMAKE --add-missing || exit $?
 autoconf || exit $?
 
+intltoolize --automake || exit $?
 
 cd $ORIGDIR
 

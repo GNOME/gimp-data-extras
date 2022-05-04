@@ -1,0 +1,12 @@
+#!/bin/sh
+
+appstreamcli validate ${GIMP_TESTING_ABS_TOP_BUILDDIR}/desktop/org.gimp.GIMP.data_extras.metainfo.xml && \
+if [ $(expr @GIMP_MICRO_VERSION@ % 2) = 0 ]; then
+  grep TODO ${GIMP_TESTING_ABS_TOP_BUILDDIR}/desktop/org.gimp.GIMP.appdata.xml
+  if [ $? = 0 ]; then
+    echo "ERROR: stable version with remaining TODOs in appdata."
+    false
+  fi
+else
+  true
+fi
