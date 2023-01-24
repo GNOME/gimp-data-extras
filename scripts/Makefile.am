@@ -38,6 +38,7 @@ scripts = \
 	land.scm			\
 	neon-logo.scm			\
 	news-text.scm			\
+	predator.scm			\
 	pupi-button.scm			\
 	rendermap.scm			\
 	sota-chrome-logo.scm		\
