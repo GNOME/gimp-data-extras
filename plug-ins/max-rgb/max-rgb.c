@@ -17,12 +17,15 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
+/* For localization functions, though for now, there is no gettext catalog
+ * attached to this plug-in.
+ * When we'll want real localization, use set_i18n().
+ */
+#define GETTEXT_PACKAGE "max-rgb"
+#include <glib/gi18n-lib.h>
 
 #include <libgimp/gimp.h>
 #include <libgimp/gimpui.h>
-
-#include "libgimp/stdplugins-intl.h"
 
 
 #define PLUG_IN_PROC   "plug-in-max-rgb"
@@ -96,7 +99,6 @@ static gint              max_rgb_dialog           (GimpDrawable         *drawabl
 G_DEFINE_TYPE (MaxRGB, max_rgb, GIMP_TYPE_PLUG_IN)
 
 GIMP_MAIN (MAXRGB_TYPE)
-DEFINE_STD_SET_I18N
 
 static void
 max_rgb_class_init (MaxRGBClass *klass)
@@ -105,7 +107,8 @@ max_rgb_class_init (MaxRGBClass *klass)
 
   plug_in_class->query_procedures = max_rgb_query_procedures;
   plug_in_class->create_procedure = max_rgb_create_procedure;
-  plug_in_class->set_i18n         = STD_SET_I18N;
+  /* Localization disabled for now. */
+  plug_in_class->set_i18n         = NULL;
 }
 
 static void
